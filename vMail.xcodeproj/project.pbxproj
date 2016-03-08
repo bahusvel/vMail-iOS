@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A888C07F1C8E3A9100FCA6EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */; };
+		A888C0811C8E3A9100FCA6EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0801C8E3A9100FCA6EB /* ViewController.swift */; };
+		A888C0841C8E3A9100FCA6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A888C0821C8E3A9100FCA6EB /* Main.storyboard */; };
+		A888C0871C8E3A9100FCA6EB /* vMail.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A888C0851C8E3A9100FCA6EB /* vMail.xcdatamodeld */; };
+		A888C0891C8E3A9100FCA6EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A888C0881C8E3A9100FCA6EB /* Assets.xcassets */; };
+		A888C08C1C8E3A9100FCA6EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A888C08A1C8E3A9100FCA6EB /* LaunchScreen.storyboard */; };
+		A888C0981C8E5F3800FCA6EB /* CircleBarStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */; };
+		A888C09A1C8E60B700FCA6EB /* CircleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0991C8E60B700FCA6EB /* CircleBar.swift */; };
+		A888C09C1C8E65A200FCA6EB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C09B1C8E65A200FCA6EB /* CircleButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A888C07B1C8E3A9100FCA6EB /* vMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A888C0801C8E3A9100FCA6EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A888C0831C8E3A9100FCA6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A888C0861C8E3A9100FCA6EB /* vMail.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = vMail.xcdatamodel; sourceTree = "<group>"; };
+		A888C0881C8E3A9100FCA6EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A888C08B1C8E3A9100FCA6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A888C08D1C8E3A9100FCA6EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBarStyleKit.swift; sourceTree = "<group>"; };
+		A888C0991C8E60B700FCA6EB /* CircleBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBar.swift; sourceTree = "<group>"; };
+		A888C09B1C8E65A200FCA6EB /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A888C0781C8E3A9100FCA6EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A888C0721C8E3A9100FCA6EB = {
+			isa = PBXGroup;
+			children = (
+				A888C07D1C8E3A9100FCA6EB /* vMail */,
+				A888C07C1C8E3A9100FCA6EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A888C07C1C8E3A9100FCA6EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A888C07B1C8E3A9100FCA6EB /* vMail.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A888C07D1C8E3A9100FCA6EB /* vMail */ = {
+			isa = PBXGroup;
+			children = (
+				A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */,
+				A888C0801C8E3A9100FCA6EB /* ViewController.swift */,
+				A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */,
+				A888C0821C8E3A9100FCA6EB /* Main.storyboard */,
+				A888C09B1C8E65A200FCA6EB /* CircleButton.swift */,
+				A888C0881C8E3A9100FCA6EB /* Assets.xcassets */,
+				A888C08A1C8E3A9100FCA6EB /* LaunchScreen.storyboard */,
+				A888C08D1C8E3A9100FCA6EB /* Info.plist */,
+				A888C0991C8E60B700FCA6EB /* CircleBar.swift */,
+				A888C0851C8E3A9100FCA6EB /* vMail.xcdatamodeld */,
+			);
+			path = vMail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A888C07A1C8E3A9100FCA6EB /* vMail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A888C0901C8E3A9100FCA6EB /* Build configuration list for PBXNativeTarget "vMail" */;
+			buildPhases = (
+				A888C0771C8E3A9100FCA6EB /* Sources */,
+				A888C0781C8E3A9100FCA6EB /* Frameworks */,
+				A888C0791C8E3A9100FCA6EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vMail;
+			productName = vMail;
+			productReference = A888C07B1C8E3A9100FCA6EB /* vMail.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A888C0731C8E3A9100FCA6EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Denis Lavrov";
+				TargetAttributes = {
+					A888C07A1C8E3A9100FCA6EB = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = A888C0761C8E3A9100FCA6EB /* Build configuration list for PBXProject "vMail" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A888C0721C8E3A9100FCA6EB;
+			productRefGroup = A888C07C1C8E3A9100FCA6EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A888C07A1C8E3A9100FCA6EB /* vMail */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A888C0791C8E3A9100FCA6EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A888C08C1C8E3A9100FCA6EB /* LaunchScreen.storyboard in Resources */,
+				A888C0891C8E3A9100FCA6EB /* Assets.xcassets in Resources */,
+				A888C0841C8E3A9100FCA6EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A888C0771C8E3A9100FCA6EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A888C0871C8E3A9100FCA6EB /* vMail.xcdatamodeld in Sources */,
+				A888C09A1C8E60B700FCA6EB /* CircleBar.swift in Sources */,
+				A888C0811C8E3A9100FCA6EB /* ViewController.swift in Sources */,
+				A888C09C1C8E65A200FCA6EB /* CircleButton.swift in Sources */,
+				A888C0981C8E5F3800FCA6EB /* CircleBarStyleKit.swift in Sources */,
+				A888C07F1C8E3A9100FCA6EB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A888C0821C8E3A9100FCA6EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A888C0831C8E3A9100FCA6EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A888C08A1C8E3A9100FCA6EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A888C08B1C8E3A9100FCA6EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A888C08E1C8E3A9100FCA6EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A888C08F1C8E3A9100FCA6EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A888C0911C8E3A9100FCA6EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = vMail/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bahus.vMail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A888C0921C8E3A9100FCA6EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = vMail/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bahus.vMail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A888C0761C8E3A9100FCA6EB /* Build configuration list for PBXProject "vMail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A888C08E1C8E3A9100FCA6EB /* Debug */,
+				A888C08F1C8E3A9100FCA6EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A888C0901C8E3A9100FCA6EB /* Build configuration list for PBXNativeTarget "vMail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A888C0911C8E3A9100FCA6EB /* Debug */,
+				A888C0921C8E3A9100FCA6EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A888C0851C8E3A9100FCA6EB /* vMail.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A888C0861C8E3A9100FCA6EB /* vMail.xcdatamodel */,
+			);
+			currentVersion = A888C0861C8E3A9100FCA6EB /* vMail.xcdatamodel */;
+			path = vMail.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A888C0731C8E3A9100FCA6EB /* Project object */;
+}
