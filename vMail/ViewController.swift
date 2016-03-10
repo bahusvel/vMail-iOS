@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    let client = VMailClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("Connecting...")
+        client.authenticate("bahus.vel@gmail.com", password: "password")
     }
 
     override func didReceiveMemoryWarning() {

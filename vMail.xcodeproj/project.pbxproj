@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A82FF7FE1C90DA6A00E679EC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A82FF7F61C90DA6A00E679EC /* LICENSE */; };
+		A82FF7FF1C90DA6A00E679EC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7F71C90DA6A00E679EC /* README.md */; };
+		A82FF8001C90DA6A00E679EC /* helper_methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7F91C90DA6A00E679EC /* helper_methods.swift */; };
+		A82FF8011C90DA6A00E679EC /* MessagePackEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FA1C90DA6A00E679EC /* MessagePackEnum.swift */; };
+		A82FF8021C90DA6A00E679EC /* NSDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FB1C90DA6A00E679EC /* NSDataHelper.swift */; };
+		A82FF8031C90DA6A00E679EC /* pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FC1C90DA6A00E679EC /* pack.swift */; };
+		A82FF8041C90DA6A00E679EC /* unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FD1C90DA6A00E679EC /* unpack.swift */; };
+		A82FF8061C90DAA600E679EC /* vMailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF8051C90DAA600E679EC /* vMailClient.swift */; };
 		A888C07F1C8E3A9100FCA6EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */; };
 		A888C0811C8E3A9100FCA6EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0801C8E3A9100FCA6EB /* ViewController.swift */; };
 		A888C0841C8E3A9100FCA6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A888C0821C8E3A9100FCA6EB /* Main.storyboard */; };
@@ -19,6 +27,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A82FF7F61C90DA6A00E679EC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A82FF7F71C90DA6A00E679EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A82FF7F91C90DA6A00E679EC /* helper_methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helper_methods.swift; sourceTree = "<group>"; };
+		A82FF7FA1C90DA6A00E679EC /* MessagePackEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackEnum.swift; sourceTree = "<group>"; };
+		A82FF7FB1C90DA6A00E679EC /* NSDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataHelper.swift; sourceTree = "<group>"; };
+		A82FF7FC1C90DA6A00E679EC /* pack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pack.swift; sourceTree = "<group>"; };
+		A82FF7FD1C90DA6A00E679EC /* unpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = unpack.swift; sourceTree = "<group>"; };
+		A82FF8051C90DAA600E679EC /* vMailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vMailClient.swift; sourceTree = "<group>"; };
 		A888C07B1C8E3A9100FCA6EB /* vMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A888C0801C8E3A9100FCA6EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +59,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A82FF7F51C90DA6A00E679EC /* MessagePack */ = {
+			isa = PBXGroup;
+			children = (
+				A82FF7F61C90DA6A00E679EC /* LICENSE */,
+				A82FF7F71C90DA6A00E679EC /* README.md */,
+				A82FF7F81C90DA6A00E679EC /* src */,
+			);
+			path = MessagePack;
+			sourceTree = "<group>";
+		};
+		A82FF7F81C90DA6A00E679EC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A82FF7F91C90DA6A00E679EC /* helper_methods.swift */,
+				A82FF7FA1C90DA6A00E679EC /* MessagePackEnum.swift */,
+				A82FF7FB1C90DA6A00E679EC /* NSDataHelper.swift */,
+				A82FF7FC1C90DA6A00E679EC /* pack.swift */,
+				A82FF7FD1C90DA6A00E679EC /* unpack.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		A888C0721C8E3A9100FCA6EB = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */,
+				A82FF8051C90DAA600E679EC /* vMailClient.swift */,
 				A888C0801C8E3A9100FCA6EB /* ViewController.swift */,
+				A82FF7F51C90DA6A00E679EC /* MessagePack */,
 				A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */,
 				A888C0821C8E3A9100FCA6EB /* Main.storyboard */,
 				A888C09B1C8E65A200FCA6EB /* CircleButton.swift */,
@@ -136,6 +176,7 @@
 			files = (
 				A888C08C1C8E3A9100FCA6EB /* LaunchScreen.storyboard in Resources */,
 				A888C0891C8E3A9100FCA6EB /* Assets.xcassets in Resources */,
+				A82FF7FE1C90DA6A00E679EC /* LICENSE in Resources */,
 				A888C0841C8E3A9100FCA6EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,9 +188,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82FF8011C90DA6A00E679EC /* MessagePackEnum.swift in Sources */,
 				A888C0871C8E3A9100FCA6EB /* vMail.xcdatamodeld in Sources */,
 				A888C09A1C8E60B700FCA6EB /* CircleBar.swift in Sources */,
+				A82FF8001C90DA6A00E679EC /* helper_methods.swift in Sources */,
+				A82FF8021C90DA6A00E679EC /* NSDataHelper.swift in Sources */,
+				A82FF8041C90DA6A00E679EC /* unpack.swift in Sources */,
 				A888C0811C8E3A9100FCA6EB /* ViewController.swift in Sources */,
+				A82FF8031C90DA6A00E679EC /* pack.swift in Sources */,
+				A82FF7FF1C90DA6A00E679EC /* README.md in Sources */,
+				A82FF8061C90DAA600E679EC /* vMailClient.swift in Sources */,
 				A888C09C1C8E65A200FCA6EB /* CircleButton.swift in Sources */,
 				A888C0981C8E5F3800FCA6EB /* CircleBarStyleKit.swift in Sources */,
 				A888C07F1C8E3A9100FCA6EB /* AppDelegate.swift in Sources */,
@@ -302,6 +350,7 @@
 				A888C0921C8E3A9100FCA6EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
