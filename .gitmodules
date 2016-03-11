@@ -1,3 +1,0 @@
-[submodule "vMail/MessagePack"]
-	path = vMail/MessagePack
-	url = https://github.com/michael-yuji/YSMessagePack
