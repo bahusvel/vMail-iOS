@@ -7,19 +7,73 @@
 //
 
 import Foundation
+import ProtocolBuffers
 
 class VMailClient: NSObject, NSStreamDelegate{
     var inputStream: NSInputStream?
     var outputStream: NSOutputStream?
+    var authenticated = false
     
     func authenticate(username: String, password: String){
-        let message = ["type": "auth_request", "username":username, "password":password]
-        let packed = packItems([message], withOptions: [.PackWithUTF8StringEncoding])
-        outputStream?.write(UnsafePointer<UInt8>(packed.bytes), maxLength: packed.length)
+        let authRequestBuilder = VmailProto.AuthRequest.Builder()
+        authRequestBuilder.username = username
+        authRequestBuilder.password = password
+        do {
+        let authRequest = try authRequestBuilder.build()
+        sendMessage(authRequest)
+        } catch {
+            print("Serialization Error")
+        }
+        
     }
     
-    func messageIn(msg: [String: AnyObject]){
-        
+    func sendMessage(message: AbstractMessage){
+        let vmailMessageBuilder = VmailProto.VmailMessage.Builder()
+        switch message {
+        case is VmailProto.AuthRequest:
+            vmailMessageBuilder.mtype = VmailProto.MessageType.AuthRequest
+        case is VmailProto.Vmessage:
+            vmailMessageBuilder.mtype = VmailProto.MessageType.Vmessage
+        default:
+            print("Unknown message type")
+        }
+        vmailMessageBuilder.messageData = message.data()
+        do {
+        let messageData = try vmailMessageBuilder.build().data()
+        outputStream?.write(UnsafePointer<UInt8>(messageData.bytes), maxLength: messageData.length)
+        } catch {
+            print("Erorr serializing the message")
+        }
+    }
+    
+    func sendVmessage(message: VMail) -> Bool{
+        if let vmessage = message.toVMessage() {
+            if authenticated {
+                sendMessage(vmessage)
+                return true
+            }
+        }
+        return false
+    }
+    
+    func messageIn(message: VmailProto.VmailMessage){
+        switch message.mtype{
+        case VmailProto.MessageType.AuthResponse:
+            do {
+                let auth_response = try VmailProto.AuthResponse.parseFromData(message.data())
+                authIn(auth_response)
+            } catch {
+                print("Deserialization error")
+            }
+        default:
+            print("Unknown Message Type")
+        }
+    }
+    
+    func authIn(message: VmailProto.AuthResponse){
+        authenticated = message.success
+        let vmail = VMail(sender: "bahus.vel@gmail.com", receivers: ["bahus.vel@gmail.com"], subject: "Testing vMail")
+        sendVmessage(vmail)
     }
     
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
@@ -40,10 +94,10 @@ class VMailClient: NSObject, NSStreamDelegate{
             print(message)
             let msgData = NSData(bytes: UnsafePointer<Void>(message), length: message.count)
             do {
-            let unpackedItems = try msgData.unpack()
-            print(unpackedItems[0].castToDictionary!)
-            } catch let error as NSError{
-                print(error)
+                let vmailMessage = try VmailProto.VmailMessage.parseFromData(msgData)
+                messageIn(vmailMessage)
+            } catch{
+                print("Deserialization error")
             }
         case NSStreamEvent.EndEncountered:
             inputStream = nil
