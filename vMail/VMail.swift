@@ -24,13 +24,13 @@ class VMail{
         self.subject = subject
     }
     
-    convenience init(vmessage: VmailProto.Vmessage){
+    convenience init(vmessage: Vproto.Vmessage){
         self.init(sender: vmessage.sender, receivers: vmessage.receivers, subject: vmessage.subject)
     }
     
     
-    func toVMessage() -> VmailProto.Vmessage?{
-        let vb = VmailProto.Vmessage.Builder()
+    func toVMessage() -> Vproto.Vmessage?{
+        let vb = Vproto.Vmessage.Builder()
         vb.sender = sender
         vb.subject = subject
         vb.receivers = receivers

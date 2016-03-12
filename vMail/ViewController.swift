@@ -9,13 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let client = VMailClient()
+    static let client = VMailClient()
+	static var instance: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		ViewController.instance = self
         // Do any additional setup after loading the view, typically from a nib.
         print("Connecting...")
-        client.authenticate("bahus.vel@gmail.com", password: "password")
+        ViewController.client.authenticate("bahus.vel@gmail.com", password: "password")
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,9 +25,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func segueToCompose(sender: CircleButton) {
-        performSegueWithIdentifier("compose", sender: sender)
-    }
-
+	/*
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.destinationViewController is ComposeViewController && sender is CircleButton{
+			print("Setting the circle button")
+		}
+	}
+	*/
+	
 }
 

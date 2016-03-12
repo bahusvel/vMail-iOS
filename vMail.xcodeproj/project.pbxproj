@@ -8,19 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4F395984B382132C0195B7CB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF75F7AE7E96C38EBD2E9E4 /* Pods.framework */; };
-		A82FF7FE1C90DA6A00E679EC /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A82FF7F61C90DA6A00E679EC /* LICENSE */; };
-		A82FF7FF1C90DA6A00E679EC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7F71C90DA6A00E679EC /* README.md */; };
-		A82FF8001C90DA6A00E679EC /* helper_methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7F91C90DA6A00E679EC /* helper_methods.swift */; };
-		A82FF8011C90DA6A00E679EC /* MessagePackEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FA1C90DA6A00E679EC /* MessagePackEnum.swift */; };
-		A82FF8021C90DA6A00E679EC /* NSDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FB1C90DA6A00E679EC /* NSDataHelper.swift */; };
-		A82FF8031C90DA6A00E679EC /* pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FC1C90DA6A00E679EC /* pack.swift */; };
-		A82FF8041C90DA6A00E679EC /* unpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF7FD1C90DA6A00E679EC /* unpack.swift */; };
+		A813464D1C936D2300E03D76 /* Vproto.Auth.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813464A1C936D2300E03D76 /* Vproto.Auth.proto.swift */; };
+		A813464E1C936D2300E03D76 /* Vproto.Mail.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813464B1C936D2300E03D76 /* Vproto.Mail.proto.swift */; };
+		A813464F1C936D2300E03D76 /* Vproto.Vmail.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A813464C1C936D2300E03D76 /* Vproto.Vmail.proto.swift */; };
+		A81346511C936E3A00E03D76 /* MicrophoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81346501C936E3A00E03D76 /* MicrophoneController.swift */; };
+		A81346531C93B85200E03D76 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81346521C93B85200E03D76 /* ComposeViewController.swift */; };
+		A81346551C93C17300E03D76 /* MicBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81346541C93C17300E03D76 /* MicBarViewController.swift */; };
+		A81346571C9420EC00E03D76 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81346561C9420EC00E03D76 /* MainViewController.swift */; };
+		A81346591C94245A00E03D76 /* MasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81346581C94245A00E03D76 /* MasterController.swift */; };
 		A82FF8061C90DAA600E679EC /* vMailClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF8051C90DAA600E679EC /* vMailClient.swift */; };
 		A82FF8081C92455F00E679EC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A82FF8071C92455F00E679EC /* Podfile */; };
-		A82FF80C1C9245EB00E679EC /* VmailProto.Auth.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF80A1C9245EB00E679EC /* VmailProto.Auth.proto.swift */; };
-		A82FF80D1C9245EB00E679EC /* VmailProto.Vmail.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF80B1C9245EB00E679EC /* VmailProto.Vmail.proto.swift */; };
 		A82FF80F1C92584900E679EC /* VMail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF80E1C92584900E679EC /* VMail.swift */; };
-		A82FF8111C9258CB00E679EC /* VmailProto.Mail.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82FF8101C9258CB00E679EC /* VmailProto.Mail.proto.swift */; };
 		A888C07F1C8E3A9100FCA6EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */; };
 		A888C0811C8E3A9100FCA6EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0801C8E3A9100FCA6EB /* ViewController.swift */; };
 		A888C0841C8E3A9100FCA6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A888C0821C8E3A9100FCA6EB /* Main.storyboard */; };
@@ -36,19 +34,17 @@
 		31A75287D76A9FC80879AC9A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7A611D4C4161A672B9BF2F36 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7FF75F7AE7E96C38EBD2E9E4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A82FF7F61C90DA6A00E679EC /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A82FF7F71C90DA6A00E679EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A82FF7F91C90DA6A00E679EC /* helper_methods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helper_methods.swift; sourceTree = "<group>"; };
-		A82FF7FA1C90DA6A00E679EC /* MessagePackEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackEnum.swift; sourceTree = "<group>"; };
-		A82FF7FB1C90DA6A00E679EC /* NSDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataHelper.swift; sourceTree = "<group>"; };
-		A82FF7FC1C90DA6A00E679EC /* pack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pack.swift; sourceTree = "<group>"; };
-		A82FF7FD1C90DA6A00E679EC /* unpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = unpack.swift; sourceTree = "<group>"; };
+		A813464A1C936D2300E03D76 /* Vproto.Auth.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vproto.Auth.proto.swift; sourceTree = "<group>"; };
+		A813464B1C936D2300E03D76 /* Vproto.Mail.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vproto.Mail.proto.swift; sourceTree = "<group>"; };
+		A813464C1C936D2300E03D76 /* Vproto.Vmail.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vproto.Vmail.proto.swift; sourceTree = "<group>"; };
+		A81346501C936E3A00E03D76 /* MicrophoneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicrophoneController.swift; sourceTree = "<group>"; };
+		A81346521C93B85200E03D76 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		A81346541C93C17300E03D76 /* MicBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicBarViewController.swift; sourceTree = "<group>"; };
+		A81346561C9420EC00E03D76 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A81346581C94245A00E03D76 /* MasterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterController.swift; sourceTree = "<group>"; };
 		A82FF8051C90DAA600E679EC /* vMailClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = vMailClient.swift; sourceTree = "<group>"; };
 		A82FF8071C92455F00E679EC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A82FF80A1C9245EB00E679EC /* VmailProto.Auth.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VmailProto.Auth.proto.swift; sourceTree = "<group>"; };
-		A82FF80B1C9245EB00E679EC /* VmailProto.Vmail.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VmailProto.Vmail.proto.swift; sourceTree = "<group>"; };
 		A82FF80E1C92584900E679EC /* VMail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMail.swift; sourceTree = "<group>"; };
-		A82FF8101C9258CB00E679EC /* VmailProto.Mail.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VmailProto.Mail.proto.swift; sourceTree = "<group>"; };
 		A888C07B1C8E3A9100FCA6EB /* vMail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vMail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A888C0801C8E3A9100FCA6EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,44 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A82FF7F51C90DA6A00E679EC /* MessagePack */ = {
+		A81346491C936D2300E03D76 /* vproto */ = {
 			isa = PBXGroup;
 			children = (
-				A82FF7F61C90DA6A00E679EC /* LICENSE */,
-				A82FF7F71C90DA6A00E679EC /* README.md */,
-				A82FF7F81C90DA6A00E679EC /* src */,
+				A813464A1C936D2300E03D76 /* Vproto.Auth.proto.swift */,
+				A813464B1C936D2300E03D76 /* Vproto.Mail.proto.swift */,
+				A813464C1C936D2300E03D76 /* Vproto.Vmail.proto.swift */,
 			);
-			path = MessagePack;
-			sourceTree = "<group>";
-		};
-		A82FF7F81C90DA6A00E679EC /* src */ = {
-			isa = PBXGroup;
-			children = (
-				A82FF7F91C90DA6A00E679EC /* helper_methods.swift */,
-				A82FF7FA1C90DA6A00E679EC /* MessagePackEnum.swift */,
-				A82FF7FB1C90DA6A00E679EC /* NSDataHelper.swift */,
-				A82FF7FC1C90DA6A00E679EC /* pack.swift */,
-				A82FF7FD1C90DA6A00E679EC /* unpack.swift */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		A82FF8091C9245EB00E679EC /* vmail_swift */ = {
-			isa = PBXGroup;
-			children = (
-				A82FF8101C9258CB00E679EC /* VmailProto.Mail.proto.swift */,
-				A82FF80A1C9245EB00E679EC /* VmailProto.Auth.proto.swift */,
-				A82FF80B1C9245EB00E679EC /* VmailProto.Vmail.proto.swift */,
-			);
-			name = vmail_swift;
-			path = ../vMailServer/vmail_swift;
+			path = vproto;
 			sourceTree = "<group>";
 		};
 		A888C0721C8E3A9100FCA6EB = {
 			isa = PBXGroup;
 			children = (
 				A82FF8071C92455F00E679EC /* Podfile */,
-				A82FF8091C9245EB00E679EC /* vmail_swift */,
 				A888C07D1C8E3A9100FCA6EB /* vMail */,
 				A888C07C1C8E3A9100FCA6EB /* Products */,
 				CDD2612041A2E99B79D356C0 /* Pods */,
@@ -130,13 +102,18 @@
 		A888C07D1C8E3A9100FCA6EB /* vMail */ = {
 			isa = PBXGroup;
 			children = (
+				A81346491C936D2300E03D76 /* vproto */,
 				A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */,
 				A82FF8051C90DAA600E679EC /* vMailClient.swift */,
 				A82FF80E1C92584900E679EC /* VMail.swift */,
 				A888C0801C8E3A9100FCA6EB /* ViewController.swift */,
-				A82FF7F51C90DA6A00E679EC /* MessagePack */,
 				A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */,
+				A81346561C9420EC00E03D76 /* MainViewController.swift */,
 				A888C0821C8E3A9100FCA6EB /* Main.storyboard */,
+				A81346541C93C17300E03D76 /* MicBarViewController.swift */,
+				A81346581C94245A00E03D76 /* MasterController.swift */,
+				A81346521C93B85200E03D76 /* ComposeViewController.swift */,
+				A81346501C936E3A00E03D76 /* MicrophoneController.swift */,
 				A888C09B1C8E65A200FCA6EB /* CircleButton.swift */,
 				A888C0881C8E3A9100FCA6EB /* Assets.xcassets */,
 				A888C08A1C8E3A9100FCA6EB /* LaunchScreen.storyboard */,
@@ -228,7 +205,6 @@
 				A82FF8081C92455F00E679EC /* Podfile in Resources */,
 				A888C08C1C8E3A9100FCA6EB /* LaunchScreen.storyboard in Resources */,
 				A888C0891C8E3A9100FCA6EB /* Assets.xcassets in Resources */,
-				A82FF7FE1C90DA6A00E679EC /* LICENSE in Resources */,
 				A888C0841C8E3A9100FCA6EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,23 +264,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A82FF8011C90DA6A00E679EC /* MessagePackEnum.swift in Sources */,
 				A888C0871C8E3A9100FCA6EB /* vMail.xcdatamodeld in Sources */,
+				A81346591C94245A00E03D76 /* MasterController.swift in Sources */,
 				A888C09A1C8E60B700FCA6EB /* CircleBar.swift in Sources */,
-				A82FF8001C90DA6A00E679EC /* helper_methods.swift in Sources */,
-				A82FF8021C90DA6A00E679EC /* NSDataHelper.swift in Sources */,
-				A82FF80C1C9245EB00E679EC /* VmailProto.Auth.proto.swift in Sources */,
-				A82FF8041C90DA6A00E679EC /* unpack.swift in Sources */,
+				A813464D1C936D2300E03D76 /* Vproto.Auth.proto.swift in Sources */,
 				A888C0811C8E3A9100FCA6EB /* ViewController.swift in Sources */,
-				A82FF8031C90DA6A00E679EC /* pack.swift in Sources */,
-				A82FF7FF1C90DA6A00E679EC /* README.md in Sources */,
+				A813464F1C936D2300E03D76 /* Vproto.Vmail.proto.swift in Sources */,
+				A81346531C93B85200E03D76 /* ComposeViewController.swift in Sources */,
+				A81346551C93C17300E03D76 /* MicBarViewController.swift in Sources */,
 				A82FF8061C90DAA600E679EC /* vMailClient.swift in Sources */,
 				A888C09C1C8E65A200FCA6EB /* CircleButton.swift in Sources */,
+				A81346571C9420EC00E03D76 /* MainViewController.swift in Sources */,
 				A888C0981C8E5F3800FCA6EB /* CircleBarStyleKit.swift in Sources */,
-				A82FF80D1C9245EB00E679EC /* VmailProto.Vmail.proto.swift in Sources */,
 				A888C07F1C8E3A9100FCA6EB /* AppDelegate.swift in Sources */,
-				A82FF8111C9258CB00E679EC /* VmailProto.Mail.proto.swift in Sources */,
+				A81346511C936E3A00E03D76 /* MicrophoneController.swift in Sources */,
 				A82FF80F1C92584900E679EC /* VMail.swift in Sources */,
+				A813464E1C936D2300E03D76 /* Vproto.Mail.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
