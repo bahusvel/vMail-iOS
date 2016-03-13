@@ -9,6 +9,8 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
+   
+    var voiceMessageData: NSData? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,12 @@ class ComposeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	@IBAction func cancel(sender: UIBarButtonItem) {
-		MasterController.anInstance?.selectedIndex = 0
+        MasterController.anInstance?.transitionTo(0){_,_ in}
 	}
+    
+    @IBAction func sendVMail(sender: AnyObject) {
+        print("Sending")
+        MasterController.anInstance?.transitionTo(0){_,_ in}
+    }
 
 }

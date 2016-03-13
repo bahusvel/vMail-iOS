@@ -22,15 +22,10 @@ class MasterController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func transitionTo(index: Int, callback: (UIViewController?, UIViewController?) -> Void){
+        let from = selectedViewController
+        selectedIndex = index
+        let to = selectedViewController
+        callback(from, to)
     }
-    */
-
 }

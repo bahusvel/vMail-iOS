@@ -12,6 +12,7 @@ class MicBarViewController: UIViewController {
 	static let micController = MicrophoneController()
 	static var isCompose = false
 	static var instance: MicBarViewController?
+    var currentCompose: ComposeViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,21 @@ class MicBarViewController: UIViewController {
 	
 	
 	@IBAction func segueToCompose(sender: CircleButton) {
-		MicBarViewController.micController.record()
-		MasterController.anInstance?.selectedIndex = 1
+		MicBarViewController.micController.record("test")
+        MasterController.anInstance!.transitionTo(1){from, to in
+            if let f = from as? ViewController{
+                if let t = to as? ComposeViewController{
+                    self.currentCompose = t
+                    print("Doing standard compose")
+                }
+            }
+        }
 	}
 	
 	
 	@IBAction func microphoneUp(sender: CircleButton) {
-		MicBarViewController.micController.stop()
+		let file = MicBarViewController.micController.stop()
+        MicBarViewController.micController.play(file!)
 	}
 
     /*

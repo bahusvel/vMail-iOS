@@ -1,3 +1,6 @@
 [submodule "vMail/protocol"]
 	path = vMail/protocol
 	url = https://github.com/bahusvel/vMail
+[submodule "protocol"]
+	path = protocol
+	url = https://github.com/bahusvel/vMail
