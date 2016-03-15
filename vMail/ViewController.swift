@@ -9,22 +9,34 @@
 import UIKit
 
 class ViewController: UIViewController {
-    static let client = VMailClient()
+    var client: VMailClient?
 	static var instance: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 		ViewController.instance = self
+        if VMailClient.anInstance == nil {
+            client = VMailClient()
+        } else {
+            client = VMailClient.anInstance
+        }
+        if !(client!.authenticated) {
+            authenticate()
+        }
         // Do any additional setup after loading the view, typically from a nib.
         print("Connecting...")
-        ViewController.client.authenticate("bahus.vel@gmail.com", password: "password")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func authenticate() -> Bool{
+        client?.authenticate("bahus.vel@bahus.com", password: "password")
+        return true
+    }
+    
 	/*
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.destinationViewController is ComposeViewController && sender is CircleButton{

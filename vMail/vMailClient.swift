@@ -10,6 +10,7 @@ import Foundation
 import ProtocolBuffers
 
 class VMailClient: NSObject, NSStreamDelegate{
+    static var anInstance: VMailClient?
     var inputStream: NSInputStream?
     var outputStream: NSOutputStream?
     var authenticated = false
@@ -57,23 +58,30 @@ class VMailClient: NSObject, NSStreamDelegate{
     }
     
     func messageIn(message: Vproto.VmailMessage){
-        switch message.mtype{
-        case Vproto.MessageType.AuthResponse:
-            do {
+        do {
+            switch message.mtype{
+            case Vproto.MessageType.AuthResponse:
                 let auth_response = try Vproto.AuthResponse.parseFromData(message.data())
                 authIn(auth_response)
-            } catch {
-                print("Deserialization error")
+            case Vproto.MessageType.Vmessage:
+                let vmessage = try Vproto.Vmessage.parseFromData(message.data())
+                vmessageIn(vmessage)
+            default:
+                print("Unknown Message Type")
             }
-        default:
-            print("Unknown Message Type")
+        } catch {
+            print("Deserialization error")
         }
     }
     
     func authIn(message: Vproto.AuthResponse){
         authenticated = message.success
-        let vmail = VMail(sender: "bahus.vel@gmail.com", receivers: ["bahus.vel@gmail.com"], subject: "Testing vMail")
+        let vmail = VMail(sender: "bahus.vel@bahus.com", receivers: ["bahus.vel@bahus.com"], subject: "Testing vMail")
         sendVmessage(vmail)
+    }
+    
+    func vmessageIn(message: Vproto.Vmessage){
+        print(message)
     }
     
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
@@ -123,5 +131,7 @@ class VMailClient: NSObject, NSStreamDelegate{
         
         inputStream?.open()
         outputStream?.open()
+        print("Client init complete")
+        VMailClient.anInstance = self
     }
 }
