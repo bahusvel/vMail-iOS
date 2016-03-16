@@ -41,9 +41,18 @@ class VMailClient: NSObject, NSStreamDelegate{
         vmailMessageBuilder.messageData = message.data()
         do {
         let messageData = try vmailMessageBuilder.build().data()
+        outputStream?.write(typetobinary(UInt32(messageData.length)), maxLength: 4)
         outputStream?.write(UnsafePointer<UInt8>(messageData.bytes), maxLength: messageData.length)
         } catch {
             print("Erorr serializing the message")
+        }
+    }
+    
+    func typetobinary <T> (var value: T) -> [UInt8]
+    {
+        return withUnsafePointer(&value)
+            {
+                Array(UnsafeBufferPointer(start: UnsafePointer<UInt8>($0), count: sizeof(T)))
         }
     }
     
@@ -70,11 +79,12 @@ class VMailClient: NSObject, NSStreamDelegate{
                 print("Unknown Message Type")
             }
         } catch {
-            print("Deserialization error")
+            print("Deserialization error \(error)")
         }
     }
     
     func authIn(message: Vproto.AuthResponse){
+        print("Authentication success")
         authenticated = message.success
         let vmail = VMail(sender: "bahus.vel@bahus.com", receivers: ["bahus.vel@bahus.com"], subject: "Testing vMail")
         sendVmessage(vmail)
@@ -87,19 +97,21 @@ class VMailClient: NSObject, NSStreamDelegate{
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
         switch eventCode{
         case NSStreamEvent.OpenCompleted:
-            print("Stream open")
+            break
         case NSStreamEvent.HasBytesAvailable:
+            var lenbuffer = [UInt8](count: 4, repeatedValue: 0)
             var buffer = [UInt8](count: 1024, repeatedValue: 0)
             var message = [UInt8]()
-            if aStream == inputStream{
-                while inputStream!.hasBytesAvailable{
-                    let len = inputStream?.read(&buffer, maxLength: buffer.count)
+            if aStream == inputStream {
+                inputStream?.read(&lenbuffer, maxLength: 4)
+                let totalLength:UInt32 = UnsafePointer<UInt32>(lenbuffer).memory
+                while UInt32(message.count) < totalLength{
+                    let len = inputStream?.read(&buffer, maxLength: min(buffer.count, Int(totalLength - UInt32(message.count))))
                     if len > 0 {
                         message.appendContentsOf(buffer[0..<len!])
                     }
                 }
             }
-            print(message)
             let msgData = NSData(bytes: UnsafePointer<Void>(message), length: message.count)
             do {
                 let vmailMessage = try Vproto.VmailMessage.parseFromData(msgData)
@@ -107,11 +119,14 @@ class VMailClient: NSObject, NSStreamDelegate{
             } catch{
                 print("Deserialization error")
             }
-        case NSStreamEvent.EndEncountered:
-            inputStream = nil
-            outputStream = nil
+        case NSStreamEvent.EndEncountered, NSStreamEvent.ErrorOccurred:
+            print("Connection closed")
+            inputStream?.close()
+            outputStream?.close()
         default:
-            print(eventCode)
+            if eventCode != .HasSpaceAvailable {
+                print(eventCode)
+            }
         }
     }
     
