@@ -8,7 +8,14 @@
 
 import Foundation
 
+enum Status {
+    case Read
+    case Unread
+    case Flagged
+}
+
 class VMail{
+    // vmail standard
     let sender: String
     let receivers: [String]
     var hiddenReceivers: [String] = []
@@ -16,6 +23,8 @@ class VMail{
     var transcript: String? = nil
     var audio: NSData? = nil
     var attachments: [NSData] = []
+    // client standard
+    var status = Status.Unread
     
     
     init(sender: String, receivers: [String], subject: String){

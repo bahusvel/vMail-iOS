@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="messageCell" editingAccessoryType="checkmark" rowHeight="108" id="hkq-Gr-nOl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="messageCell" editingAccessoryType="checkmark" rowHeight="108" id="hkq-Gr-nOl" customClass="VMailCell" customModule="vMail" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="108"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkq-Gr-nOl" id="aXl-t9-rTJ">
@@ -35,14 +35,14 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Message Preview over 2 lines " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Meb-LE-bew">
-                                                    <rect key="frame" x="13" y="58" width="355" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Preview over 2 lines " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Meb-LE-bew">
+                                                    <rect key="frame" x="13" y="60" width="355" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP9-hK-Oqq">
-                                                    <rect key="frame" x="13" y="33" width="355" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP9-hK-Oqq">
+                                                    <rect key="frame" x="13" y="34" width="355" height="21"/>
                                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -72,8 +72,17 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="previewLine" destination="Meb-LE-bew" id="2s8-hn-G9W"/>
+                                            <outlet property="senderLine" destination="bTk-FC-EKm" id="oqf-mt-qTV"/>
+                                            <outlet property="subjectLine" destination="TP9-hK-Oqq" id="7gA-HS-Lk8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="maE-Xd-fya"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uHf-2a-u07"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9U1-wS-LpS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -103,6 +112,9 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="MfV-yV-ah3"/>
+                    <connections>
+                        <outlet property="tableView" destination="gkd-eJ-jRT" id="TcS-j7-MdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

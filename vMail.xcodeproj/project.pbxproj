@@ -28,6 +28,7 @@
 		A888C0981C8E5F3800FCA6EB /* CircleBarStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */; };
 		A888C09A1C8E60B700FCA6EB /* CircleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C0991C8E60B700FCA6EB /* CircleBar.swift */; };
 		A888C09C1C8E65A200FCA6EB /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A888C09B1C8E65A200FCA6EB /* CircleButton.swift */; };
+		A8AE9F4E1C98F3C800F2606D /* VMailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE9F4D1C98F3C800F2606D /* VMailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBarStyleKit.swift; sourceTree = "<group>"; };
 		A888C0991C8E60B700FCA6EB /* CircleBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBar.swift; sourceTree = "<group>"; };
 		A888C09B1C8E65A200FCA6EB /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		A8AE9F4D1C98F3C800F2606D /* VMailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,26 +104,43 @@
 		A888C07D1C8E3A9100FCA6EB /* vMail */ = {
 			isa = PBXGroup;
 			children = (
+				A8AE9F501C98F44000F2606D /* ViewControllers */,
+				A8AE9F4F1C98F41600F2606D /* UIElements */,
 				A82FF8141C962A3800E679EC /* vproto */,
 				A888C07E1C8E3A9100FCA6EB /* AppDelegate.swift */,
 				A82FF8051C90DAA600E679EC /* vMailClient.swift */,
 				A82FF80E1C92584900E679EC /* VMail.swift */,
-				A888C0801C8E3A9100FCA6EB /* ViewController.swift */,
-				A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */,
-				A81346561C9420EC00E03D76 /* MainViewController.swift */,
 				A888C0821C8E3A9100FCA6EB /* Main.storyboard */,
-				A81346541C93C17300E03D76 /* MicBarViewController.swift */,
-				A81346581C94245A00E03D76 /* MasterController.swift */,
-				A81346521C93B85200E03D76 /* ComposeViewController.swift */,
 				A81346501C936E3A00E03D76 /* MicrophoneController.swift */,
-				A888C09B1C8E65A200FCA6EB /* CircleButton.swift */,
 				A888C0881C8E3A9100FCA6EB /* Assets.xcassets */,
 				A888C08A1C8E3A9100FCA6EB /* LaunchScreen.storyboard */,
 				A888C08D1C8E3A9100FCA6EB /* Info.plist */,
-				A888C0991C8E60B700FCA6EB /* CircleBar.swift */,
 				A888C0851C8E3A9100FCA6EB /* vMail.xcdatamodeld */,
 			);
 			path = vMail;
+			sourceTree = "<group>";
+		};
+		A8AE9F4F1C98F41600F2606D /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE9F4D1C98F3C800F2606D /* VMailCell.swift */,
+				A888C0971C8E5F3800FCA6EB /* CircleBarStyleKit.swift */,
+				A888C09B1C8E65A200FCA6EB /* CircleButton.swift */,
+				A888C0991C8E60B700FCA6EB /* CircleBar.swift */,
+			);
+			name = UIElements;
+			sourceTree = "<group>";
+		};
+		A8AE9F501C98F44000F2606D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A888C0801C8E3A9100FCA6EB /* ViewController.swift */,
+				A81346561C9420EC00E03D76 /* MainViewController.swift */,
+				A81346541C93C17300E03D76 /* MicBarViewController.swift */,
+				A81346581C94245A00E03D76 /* MasterController.swift */,
+				A81346521C93B85200E03D76 /* ComposeViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CDD2612041A2E99B79D356C0 /* Pods */ = {
@@ -273,6 +292,7 @@
 				A82FF81A1C962A3800E679EC /* Vproto.Vmail.proto.swift in Sources */,
 				A82FF8061C90DAA600E679EC /* vMailClient.swift in Sources */,
 				A888C09C1C8E65A200FCA6EB /* CircleButton.swift in Sources */,
+				A8AE9F4E1C98F3C800F2606D /* VMailCell.swift in Sources */,
 				A82FF8181C962A3800E679EC /* Vproto.Auth.proto.swift in Sources */,
 				A81346571C9420EC00E03D76 /* MainViewController.swift in Sources */,
 				A888C0981C8E5F3800FCA6EB /* CircleBarStyleKit.swift in Sources */,

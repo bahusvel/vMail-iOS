@@ -9,11 +9,38 @@
 import Foundation
 import ProtocolBuffers
 
+protocol VMailBoxListener{
+    func newMessage(message: VMail)
+}
+
+class VMailBox{
+    var messages: [VMail] = []
+    var delegate: VMailBoxListener?
+    
+    func addMessage(message: Vproto.Vmessage){
+        let message = VMail(vmessage: message)
+        messages.append(message)
+        delegate?.newMessage(message)
+    }
+    
+    func getUnread() -> [VMail] {
+        var unread = [VMail]()
+        for message in messages {
+            if message.status == .Unread {
+                unread.append(message)
+            }
+        }
+        return unread
+    }
+}
+
 class VMailClient: NSObject, NSStreamDelegate{
     static var anInstance: VMailClient?
     var inputStream: NSInputStream?
     var outputStream: NSOutputStream?
     var authenticated = false
+    var inbox: VMailBox?
+    var outbox: VMailBox?
     
     func authenticate(username: String, password: String){
         let authRequestBuilder = Vproto.AuthRequest.Builder()
@@ -35,6 +62,7 @@ class VMailClient: NSObject, NSStreamDelegate{
             vmailMessageBuilder.mtype = Vproto.MessageType.AuthRequest
         case is Vproto.Vmessage:
             vmailMessageBuilder.mtype = Vproto.MessageType.Vmessage
+            print(message.data())
         default:
             print("Unknown message type")
         }
@@ -73,6 +101,7 @@ class VMailClient: NSObject, NSStreamDelegate{
                 let auth_response = try Vproto.AuthResponse.parseFromData(message.data())
                 authIn(auth_response)
             case Vproto.MessageType.Vmessage:
+                print(message.data())
                 let vmessage = try Vproto.Vmessage.parseFromData(message.data())
                 vmessageIn(vmessage)
             default:
@@ -91,7 +120,8 @@ class VMailClient: NSObject, NSStreamDelegate{
     }
     
     func vmessageIn(message: Vproto.Vmessage){
-        print(message)
+        print(message.receivers)
+        inbox?.addMessage(message)
     }
     
     func stream(aStream: NSStream, handleEvent eventCode: NSStreamEvent) {
@@ -130,8 +160,10 @@ class VMailClient: NSObject, NSStreamDelegate{
         }
     }
     
-    override init(){
+    init(inbox: VMailBox, outbox: VMailBox?){
         super.init()
+        self.inbox = inbox
+        self.outbox = outbox
         var readStream: Unmanaged<CFReadStream>?
         var writeStream: Unmanaged<CFWriteStream>?
         CFStreamCreatePairWithSocketToHost(nil, "localhost", 9989, &readStream, &writeStream)

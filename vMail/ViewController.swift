@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, VMailBoxListener {
+    
+    @IBOutlet weak var tableView: UITableView!
+    static var incomingMailBox = VMailBox()
     var client: VMailClient?
 	static var instance: ViewController?
     
@@ -16,13 +19,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 		ViewController.instance = self
         if VMailClient.anInstance == nil {
-            client = VMailClient()
+            client = VMailClient(inbox: ViewController.incomingMailBox, outbox: nil)
         } else {
             client = VMailClient.anInstance
         }
         if !(client!.authenticated) {
             authenticate()
         }
+        ViewController.incomingMailBox.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         print("Connecting...")
     }
@@ -32,18 +36,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func newMessage(message: VMail) {
+        tableView.reloadData()
+    }
+    
     func authenticate() -> Bool{
         client?.authenticate("bahus.vel@bahus.com", password: "password")
         return true
     }
     
-	/*
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.destinationViewController is ComposeViewController && sender is CircleButton{
-			print("Setting the circle button")
-		}
-	}
-	*/
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ViewController.incomingMailBox.getUnread().count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("messageCell") as! VMailCell
+        cell.setVMail(ViewController.incomingMailBox.getUnread()[indexPath.row])
+        return cell
+    }
 	
 }
 
