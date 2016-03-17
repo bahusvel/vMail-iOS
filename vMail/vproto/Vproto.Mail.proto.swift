@@ -19,6 +19,8 @@ public func == (lhs: Vproto.Vmessage, rhs: Vproto.Vmessage) -> Bool {
   fieldCheck = fieldCheck && (lhs.hasTranscript == rhs.hasTranscript) && (!lhs.hasTranscript || lhs.transcript == rhs.transcript)
   fieldCheck = fieldCheck && (lhs.hasAudio == rhs.hasAudio) && (!lhs.hasAudio || lhs.audio == rhs.audio)
   fieldCheck = fieldCheck && (lhs.attachments == rhs.attachments)
+  fieldCheck = fieldCheck && (lhs.hasTimeSent == rhs.hasTimeSent) && (!lhs.hasTimeSent || lhs.timeSent == rhs.timeSent)
+  fieldCheck = fieldCheck && (lhs.hasTimeReceived == rhs.hasTimeReceived) && (!lhs.hasTimeReceived || lhs.timeReceived == rhs.timeReceived)
   fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
   return fieldCheck
 }
@@ -57,16 +59,16 @@ public extension Vproto {
 
     public private(set) var hasAudio:Bool = false
     public private(set) var attachments:Array<NSData> = Array<NSData>()
+    public private(set) var timeSent:String = ""
+
+    public private(set) var hasTimeSent:Bool = false
+    public private(set) var timeReceived:String = ""
+
+    public private(set) var hasTimeReceived:Bool = false
     required public init() {
          super.init()
     }
     override public func isInitialized() -> Bool {
-      if !hasSender {
-        return false
-      }
-      if !hasSubject {
-        return false
-      }
      return true
     }
     override public func writeToCodedOutputStream(output:CodedOutputStream) throws {
@@ -96,6 +98,12 @@ public extension Vproto {
         for oneValueattachments in attachments {
           try output.writeData(7, value:oneValueattachments)
         }
+      }
+      if hasTimeSent {
+        try output.writeString(8, value:timeSent)
+      }
+      if hasTimeReceived {
+        try output.writeString(9, value:timeReceived)
       }
       try unknownFields.writeToCodedOutputStream(output)
     }
@@ -136,6 +144,12 @@ public extension Vproto {
       }
       serialize_size += dataSizeAttachments
       serialize_size += 1 * Int32(attachments.count)
+      if hasTimeSent {
+        serialize_size += timeSent.computeStringSize(8)
+      }
+      if hasTimeReceived {
+        serialize_size += timeReceived.computeStringSize(9)
+      }
       serialize_size += unknownFields.serializedSize()
       memoizedSerializedSize = serialize_size
       return serialize_size
@@ -215,6 +229,12 @@ public extension Vproto {
           output += "\(indent) attachments[\(attachmentsElementIndex)]: \(oneValueattachments)\n"
           attachmentsElementIndex++
       }
+      if hasTimeSent {
+        output += "\(indent) timeSent: \(timeSent) \n"
+      }
+      if hasTimeReceived {
+        output += "\(indent) timeReceived: \(timeReceived) \n"
+      }
       output += unknownFields.getDescription(indent)
       return output
     }
@@ -241,6 +261,12 @@ public extension Vproto {
             }
             for oneValueattachments in attachments {
                 hashCode = (hashCode &* 31) &+ oneValueattachments.hashValue
+            }
+            if hasTimeSent {
+               hashCode = (hashCode &* 31) &+ timeSent.hashValue
+            }
+            if hasTimeReceived {
+               hashCode = (hashCode &* 31) &+ timeReceived.hashValue
             }
             hashCode = (hashCode &* 31) &+  unknownFields.hashValue
             return hashCode
@@ -410,6 +436,52 @@ public extension Vproto {
          builderResult.attachments.removeAll(keepCapacity: false)
          return self
       }
+      public var hasTimeSent:Bool {
+           get {
+                return builderResult.hasTimeSent
+           }
+      }
+      public var timeSent:String {
+           get {
+                return builderResult.timeSent
+           }
+           set (value) {
+               builderResult.hasTimeSent = true
+               builderResult.timeSent = value
+           }
+      }
+      public func setTimeSent(value:String) -> Vproto.Vmessage.Builder {
+        self.timeSent = value
+        return self
+      }
+      public func clearTimeSent() -> Vproto.Vmessage.Builder{
+           builderResult.hasTimeSent = false
+           builderResult.timeSent = ""
+           return self
+      }
+      public var hasTimeReceived:Bool {
+           get {
+                return builderResult.hasTimeReceived
+           }
+      }
+      public var timeReceived:String {
+           get {
+                return builderResult.timeReceived
+           }
+           set (value) {
+               builderResult.hasTimeReceived = true
+               builderResult.timeReceived = value
+           }
+      }
+      public func setTimeReceived(value:String) -> Vproto.Vmessage.Builder {
+        self.timeReceived = value
+        return self
+      }
+      public func clearTimeReceived() -> Vproto.Vmessage.Builder{
+           builderResult.hasTimeReceived = false
+           builderResult.timeReceived = ""
+           return self
+      }
       override public var internalGetResult:GeneratedMessage {
            get {
               return builderResult
@@ -455,6 +527,12 @@ public extension Vproto {
         if !other.attachments.isEmpty {
             builderResult.attachments += other.attachments
         }
+        if other.hasTimeSent {
+             timeSent = other.timeSent
+        }
+        if other.hasTimeReceived {
+             timeReceived = other.timeReceived
+        }
         try mergeUnknownFields(other.unknownFields)
         return self
       }
@@ -490,6 +568,12 @@ public extension Vproto {
 
           case 58 :
             attachments += [try input.readData()]
+
+          case 66 :
+            timeSent = try input.readString()
+
+          case 74 :
+            timeReceived = try input.readString()
 
           default:
             if (!(try parseUnknownField(input,unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {

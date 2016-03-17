@@ -47,8 +47,8 @@ class VMailClient: NSObject, NSStreamDelegate{
         authRequestBuilder.username = username
         authRequestBuilder.password = password
         do {
-        let authRequest = try authRequestBuilder.build()
-        sendMessage(authRequest)
+            let authRequest = try authRequestBuilder.build()
+            sendMessage(authRequest)
         } catch {
             print("Serialization Error")
         }
@@ -62,15 +62,14 @@ class VMailClient: NSObject, NSStreamDelegate{
             vmailMessageBuilder.mtype = Vproto.MessageType.AuthRequest
         case is Vproto.Vmessage:
             vmailMessageBuilder.mtype = Vproto.MessageType.Vmessage
-            print(message.data())
         default:
             print("Unknown message type")
         }
         vmailMessageBuilder.messageData = message.data()
         do {
-        let messageData = try vmailMessageBuilder.build().data()
-        outputStream?.write(typetobinary(UInt32(messageData.length)), maxLength: 4)
-        outputStream?.write(UnsafePointer<UInt8>(messageData.bytes), maxLength: messageData.length)
+            let messageData = try vmailMessageBuilder.build().data()
+            outputStream?.write(typetobinary(UInt32(messageData.length)), maxLength: 4)
+            outputStream?.write(UnsafePointer<UInt8>(messageData.bytes), maxLength: messageData.length)
         } catch {
             print("Erorr serializing the message")
         }
@@ -98,11 +97,10 @@ class VMailClient: NSObject, NSStreamDelegate{
         do {
             switch message.mtype{
             case Vproto.MessageType.AuthResponse:
-                let auth_response = try Vproto.AuthResponse.parseFromData(message.data())
+                let auth_response = try Vproto.AuthResponse.parseFromData(message.messageData)
                 authIn(auth_response)
             case Vproto.MessageType.Vmessage:
-                print(message.data())
-                let vmessage = try Vproto.Vmessage.parseFromData(message.data())
+                let vmessage = try Vproto.Vmessage.parseFromData(message.messageData)
                 vmessageIn(vmessage)
             default:
                 print("Unknown Message Type")
@@ -120,7 +118,6 @@ class VMailClient: NSObject, NSStreamDelegate{
     }
     
     func vmessageIn(message: Vproto.Vmessage){
-        print(message.receivers)
         inbox?.addMessage(message)
     }
     

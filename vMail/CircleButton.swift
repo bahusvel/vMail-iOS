@@ -12,7 +12,18 @@ import UIKit
 class CircleButton: UIButton {
 
     override func drawRect(rect: CGRect) {
-        CircleBarStyleKit.drawButton(frame: rect)
+        CircleBarStyleKit.drawButton(frame: rect, highlighted: highlighted)
+    }
+    
+    
+    override var highlighted: Bool {
+        get {
+            return super.highlighted
+        }
+        set {
+            setNeedsDisplay()
+            super.highlighted = newValue
+        }
     }
 
 }
